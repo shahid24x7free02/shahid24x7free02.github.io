@@ -1,24 +1,397 @@
+
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link rel="icon" href="https://shahid24x7.free.nf/media/my-photo.jpg" type="image/x-icon">
-    <title>SHAHID</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../media/my-photo.jpg" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHAHID</title>
 </head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+}
+
+header {
+  width: 100vw;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "HeadImage HeadName"
+    "HeadImage HeadIm";
+}
+
+.HeadImage {
+  grid-area: HeadImage;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#HeaderImage {
+  width: 80px;
+  margin: 5px 10px 5px 5px;
+  border-radius: 50%;
+}
+
+
+.HeadName {
+  grid-area: HeadName;
+  display: flex;
+  justify-content: left;
+  align-items: end;
+}
+
+.HeadIm {
+  grid-area: HeadIm;
+  display: flex;
+}
+
+.HeadImSpan {
+  position: relative;
+  color: #01fe87;
+  animation: displayText 9s infinite;
+  animation-delay: calc(-3s * var(--i));
+}
+
+@keyframes displayText {
+
+  0% {
+    display: inline-block;
+  }
+
+  33.33%,
+  100% {
+    display: none;
+  }
+
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.BodyItems{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ItemsCategory {
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.ItemsCategory:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.ItemsTitle {
+  margin: 0;
+  margin-left: 2%;
+  color: #424242;
+}
+
+.ItemsBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.BoxImage {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.UPIAffiliateBoxImage {
+  height: 70px;
+  width: 70px;
+  border-radius: 20px;
+}
+
+.UPIAffiliateItemsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.UPIAffiliateitems {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContactForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.ContactForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#dataForm {
+  
+  justify-content: center;
+  align-items: center;
+  display: flex;
+ 
+}
+
+.dataFormItem{
+  max-width: 380px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 380px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+</style>
+
 <body>
-    <iframe src="https://shahid24x7.free.nf/" allowfullscreen></iframe>
+  <header>
+    <div class="HeadImage">
+      <a href="https://shahid24x7.free.nf/"><img id="HeaderImage" src="../media/my-photo.jpg" alt="my photo"></a>
+    </div>
+    <div class="HeadName">
+      <h2>Hello, I'm SHAHID.</h2>
+    </div>
+    <div class="HeadIm">
+      <h2>I'm a
+        <span class="HeadImSpan" style="--i:0;" data-text="Coder.">Coder.</span>
+        <span class="HeadImSpan" style="--i:1;" data-text="AffiliateMarketer.">Affiliate Marketer.</span>
+        <span class="HeadImSpan" style="--i:2;" data-text="FinancialAdviser.">Financial Adviser.</span>
+      </h2>
+    </div>
+  </header>
+  <div class="BodyItems">
+    <div class="ItemsCategory">
+      <h2 class="ItemsTitle">Pay.me</h2>
+      <div class="ItemsBox">
+        <div class="items">
+          <a href="upi://pay?pa=shahid24x7free@sbi"><img id="Upi" class="BoxImage" src="../media/pay_me/upi-icon.png"
+              alt="UPI"></a>
+        </div>
+        <div class="items">
+          <a href="https://razorpay.me/@digibook9211" id="Rozarpay"><img class="BoxImage"
+              src="../media/pay_me/razorpay_icon.png" alt="Razorpay"></a>
+        </div>
+      </div>
+    </div>
+    <div class="ItemsCategory">
+      <h2 class="ItemsTitle">Financial Products.</h2>
+      <div class="ItemsBox">
+        <div class="items">
+          <a href="https://sales.gromo.in/gp-website/g/pWVIEYkVsK7DCKRYYLHqr" id="Gromo"><img class="BoxImage"
+              src="../media/Financial_Product/gromo-icon.png" alt="Gromo"></a>
+        </div>
+        <div class="items">
+          <a href="https://shahid4.banksupport.in" id="ZetPartner"><img id="zet" class="BoxImage"
+              src="../media/Financial_Product/zet-icon.png" alt="Zet"></a>
+        </div>
+      </div>
+    </div>
+    <div class="ItemsCategory">
+      <h2 class="ItemsTitle">UPI Affiliate.</h2>
+      <div class="UPIAffiliateItemsBox">
+        <div class="UPIAffiliateitems">
+          <a href="https://play.google.com/store/apps/details?id=net.one97.paytm" id="Paytm"><img
+              class="UPIAffiliateBoxImage" src="../media/upi_affiliate/paytm_icon.png" alt="Paytm"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://phon.pe/oe5sinei" id="Phonepe"><img class="UPIAffiliateBoxImage"
+              src="../media/upi_affiliate/phonepe_icon.png" alt="Phonepe"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://g.co/payinvite/1u09x2q" id="Gpay"><img class="UPIAffiliateBoxImage"
+              src="../media/upi_affiliate/gpay_icon.jpeg" alt="Gpay"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://sak38.app.goo.gl/V3wExzoMZy52geea8" id="Mobilwik"><img class="UPIAffiliateBoxImage"
+              src="../media/upi_affiliate/mobikwik_icon.png" alt="Mobilwik"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://tinyurl.com/myjbmb86?refCode=MZUZ78" id="TimePay"><img class="UPIAffiliateBoxImage"
+              src="../media/upi_affiliate/time-pay_icon.png" alt="TimePay"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://amzn.in/5ht3dex" id="AmazonPay"><img class="UPIAffiliateBoxImage"
+              src="../media/upi_affiliate/amazon_icon.png" alt="AmazonPay"></a>
+        </div>
+      </div>
+    </div>
+    <div class="ItemsCategory">
+      <h2 class="ItemsTitle">Game Affiliate.</h2>
+      <div class="UPIAffiliateItemsBox">
+        <div class="UPIAffiliateitems">
+          <a href="https://1wgrdr.life/#ez1o" id="1win"><img class="UPIAffiliateBoxImage"
+              src="../media/game_affiliate/1win-logo.jpeg" alt="1win"></a>
+        </div>
+        <div class="UPIAffiliateitems"> <a href="https://stake.com/?c=mdshahid9211" id="Stake"><img
+              class="UPIAffiliateBoxImage" src="../media/game_affiliate/stake-logo.png" alt="Stake"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://affpa.top/L?tag=d_3309492m_70865c_&site=3309492&ad=70865" id="1x-Bet"><img
+              class="UPIAffiliateBoxImage" src="../media/game_affiliate/1x-icon.png" alt="1x-Bet"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://winzo.onelink.me/gu8K/d8581807" id="Winzo"><img class="UPIAffiliateBoxImage"
+              src="../media/game_affiliate/winzo_icon.jpeg" alt="Winzo"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://www.mpl.live/rd?referralCode=NCH47JX5" id="MPL"><img class="UPIAffiliateBoxImage"
+              src="../media/game_affiliate/mpl_icon.jpeg" alt="MPL"></a>
+        </div>
+        <div class="UPIAffiliateitems">
+          <a href="https://go.onelink.me/hNTA?pid=af_app_invites" id="Dream11"><img class="UPIAffiliateBoxImage"
+              src="../media/game_affiliate/dream11_icon.png" alt="Dream11"></a>
+        </div>
+      </div>
+    </div>
+    <div class="ItemsCategory">
+      <h2 class="ItemsTitle">📞Call+SMS Bomber💣💣💣</h2>
+      <div class="ItemsBox">
+        
+        <div class="items">
+          <a href="/bombers/"><img  class="BoxImage"
+              src="../media/call-bomber/callbomber2.png" alt="Zet"></a>
+        </div>
+        <div class="items">
+          <a href="/bombers/"><img class="BoxImage"
+              src="../media/call-bomber/callbomber1.png" alt="Gromo"></a>
+        </div>
+        <div class="items">
+          <a href="/bombers/"><img  class="BoxImage"
+              src="../media/call-bomber/callbomber2.png" alt="Zet"></a>
+        </div>
+        <div class="items">
+          <a href="/bombers/"><img class="BoxImage"
+              src="../media/call-bomber/callbomber1.png" alt="Gromo"></a>
+        </div>
+        <div class="items">
+          <a href="/bombers/"><img  class="BoxImage"
+              src="../media/call-bomber/callbomber2.png" alt="Zet"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer Section Main -->
+  <div class="ContactForm">
+    <h2>Contact Us</h2>
+    <form id="dataForm">
+      <div class="dataFormItem">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="button" onclick="sendEmail()">Submit</button>
+      </div>
+    </form>
+    <!-- Footer Section -->
+    <div class="footer">
+      <p id="copyright"></p>
+    </div>
+  </div>
+
+  <script>
+    function sendEmail() {
+      var name = document.getElementById("name").value;
+      var userEmail = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      var mailtoLink = "mailto: shahid24x7free@gmail.com" +
+        "?subject=Form%20Submission" +
+        "&body=" +
+        "Name%3A%20" + encodeURIComponent(name) + "%0D%0A" +
+        "User%20Email%3A%20" + encodeURIComponent(userEmail) + "%0D%0A" +
+        "Message%3A%20" + encodeURIComponent(message);
+
+      window.location.href = mailtoLink;
+    }
+    // JavaScript to dynamically set the current year
+    const currentYear = new Date().getFullYear();
+    const authorName = "SHAHID";
+    document.getElementById("copyright").innerHTML = `&copy; ${currentYear} ${authorName}. All rights reserved.`;
+  </script>
 </body>
+
 </html>

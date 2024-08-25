@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Image to Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #insta-trick-image {
+            border-radius: 4%;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #333;
+            padding: 20px;
+            background: white;
+            z-index: 1000;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Share this image into your Best Friend chat in Instagram</h1>
+    <img src="../insta-trick/insta-trick-image.jpg" alt="Image to Share" id="insta-trick-image" crossorigin="anonymous">
+    <br>
+    <button onclick="copyImageToClipboard()">Copy Image</button>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Image copied to clipboard!</h2>
+        <p>To share this image on Instagram chat:</p>
+        <ol>
+            <li>Open Instagram and go to your Best Friend's chat.</li>
+            <li>Tap on the text input field and paste the image (long press and select 'Paste').</li>
+        </ol>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function copyImageToClipboard() {
+            const img = document.getElementById('image');
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            context.drawImage(img, 0, 0);
+
+            canvas.toBlob(blob => {
+                const item = new ClipboardItem({ 'image/png': blob });
+                navigator.clipboard.write([item]).then(() => {
+                    showPopup();
+                }).catch(err => {
+                    console.error('Failed to copy image: ', err);
+                });
+            });
+        }
+
+        function showPopup() {
+            document.getElementById('popup-overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

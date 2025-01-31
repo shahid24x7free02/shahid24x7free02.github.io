@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Password input
     let passwordInput = document.createElement("input");
     passwordInput.type = "number"; // Sirf numbers input honge
-    passwordInput.placeholder = "Enter 4-digit password";
+    passwordInput.placeholder = "Enter Password";
     passwordInput.maxLength = 4;
     passwordInput.style.padding = "8px"; // Chhoti padding
     passwordInput.style.fontSize = "16px";

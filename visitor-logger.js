@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwLtuieiWFDYjS_eNE1odhg30gp2RR6LdlYLP0lZZEcD5gjG2FePHYh3C7ZRvnJkYUd/exec'; // <- REPLACE
+  const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzpWVheGQuuimelYD2swTej1EW10tV7E2MSbU9z0_ToniEKFre4Lbvx013oimxDmWYn/exec'; // <- REPLACE
   const SITE_KEY = 'MySiteKey'; // <- REPLACE (must match Apps Script)
 
   // timeout helper
